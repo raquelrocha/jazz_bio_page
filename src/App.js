@@ -1,3 +1,5 @@
+
+import React  from 'react';
 import { Header } from './layout/Header';
 import { Footer } from './layout/Footer';
 import { NotFoundErrorPage } from './layout/error-page';
@@ -10,19 +12,21 @@ import { Home } from './pages/Home';
 
 export default function App() {
   return (
-    <>
-      <Router>
+    <Router>
+      <section>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/dogs" element={<Dogs />} />
-          <Route path="/litters" element={<Litters />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="*" element={<NotFoundErrorPage />} />
-        </Routes>
+        <section className="main-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/dogs" element={<Dogs />} />
+            <Route path="/litters" element={<Litters />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="*" element={<NotFoundErrorPage />} />
+          </Routes>
+        </section>
         <Footer />
-      </Router>
-    </>
+      </section>
+    </Router>
   );
 }
